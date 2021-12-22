@@ -1,0 +1,7 @@
+- name: include ssh install
+  include_tasks: ./tasks/install/ssh_install_{{ ansible_distribution | lower }}.yml
+  when: ssh_install
+
+- name: include ssh actions
+  include_tasks: ./tasks/actions/ssh_actions.yml
+  when: ssh_actions

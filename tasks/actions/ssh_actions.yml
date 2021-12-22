@@ -1,0 +1,9 @@
+- name: include ssh_actions_add_public_key_to_host
+  include_tasks: ./tasks/actions/ssh_actions_add_public_key_to_host.yml
+  when: ssh_actions_add_public_key_to_host
+
+- name: include ssh_actions_no_sudo_password_for_ansible_user
+  include_tasks: ./tasks/actions/ssh_actions_no_sudo_password_for_ansible_user.yml
+  when:
+    - ssh_actions_no_sudo_password_for_ansible_user
+    - ansible_user != "root"

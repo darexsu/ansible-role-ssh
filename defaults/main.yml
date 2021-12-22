@@ -1,0 +1,8 @@
+#----------Installation----------#
+ssh_install: false
+ssh_install_list: [ openssh-server ]
+
+#-----------Actions-------------#
+ssh_actions: false
+ssh_actions_add_public_key_to_host: false
+ssh_actions_no_sudo_password_for_ansible_user: false
