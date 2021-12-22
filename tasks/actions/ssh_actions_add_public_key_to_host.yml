@@ -1,20 +1,28 @@
-- name: try to find and to send public ssh key to host
-  ansible.posix.authorized_key:
-    user: "{{ ansible_user }}"
+- name: ensure dependencies are installed.
+  ansible.builtin.apt:
+    name:
+      - python3-pip
+      - libssl-dev
+      - python3-venv
     state: present
-    key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
-  register: find_public_ssh_key
-  ignore_errors: yes
+    
+- name: Check the path for Python
+  ansible.builtin.command: which python3
+  register: python_interpreter_path
+   
+- name: Ensure molecule is installed in a virtual environment
+  ansible.builtin.pip:
+   name: molecule
+   version: ""
+   state: present
+   virtualenv: "{{ molecule_install_virtualenv }}"
+   virtualenv_command: "{{ python_interpreter_path.stdout }} -m venv"  
 
-
-- name: creat ssh keys on localhost
-  become: false
-  local_action: command ssh-keygen -t rsa -q -f "$HOME/.ssh/id_rsa" -N ""
-  when: find_public_ssh_key is failed
-
-- name: send public ssh key to host again
-  ansible.posix.authorized_key:
-    user: "{{ ansible_user }}"
+- name: Ensure molecule support packages are installed in a virtual environment
+  ansible.builtin.pip:
+    name: "molecule[{{ item }}]"
+    version: ""
     state: present
-    key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
-  when: find_public_ssh_key is failed
+    virtualenv: "{{ molecule_install_virtualenv }}"
+    virtualenv_command: "{{ python_interpreter_path.stdout }} -m venv"    
+  with_items: "{{ molecule_install_list }}"
