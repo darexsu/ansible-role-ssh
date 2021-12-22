@@ -1,7 +1,7 @@
 # SSH for Debian
 Options:
   - install openssh-server
-  - add ssh-key.pub to remote host
+  - creat your ssh-keys and add public key to remote host
   - disable sudo password for ansible_user on remote host
 
 1) Install from Github (git installed on your server)
