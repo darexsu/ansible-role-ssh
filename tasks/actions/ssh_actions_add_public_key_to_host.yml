@@ -5,8 +5,7 @@
     key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
   register: find_public_ssh_key
   ignore_errors: yes
-
-
+  
 - name: creat ssh keys on localhost
   become: false
   local_action: command ssh-keygen -t rsa -q -f "$HOME/.ssh/id_rsa" -N ""
