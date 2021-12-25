@@ -10,7 +10,7 @@ Installation:
 ansible-galaxy install git+https://github.com/darexsu/ansible-role-ssh.git
 ```
 2) Example playbook
-```
+```yaml
 ---
 - hosts: all
   become: yes
