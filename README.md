@@ -1,4 +1,4 @@
-# Ansible role SSH for Debian
+# Ansible role SSH
 Options:
   - Install openssh-server
   - Creat your ssh-keys and add public key to remote host
