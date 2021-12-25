@@ -1,13 +1,19 @@
 # Ansible role SSH for Debian
 Options:
-  - install openssh-server
-  - creat your ssh-keys and add public key to remote host
-  - disable sudo password for ansible_user on remote host
+  - Install openssh-server
+  - Creat your ssh-keys and add public key to remote host
+  - Disable sudo password for ansible_user on remote host
+
+Platforms:
+  - Debian, Ubuntu
+
+Ansible dependencies:
+  - None
 
 Installation:
 1) Install from Github (git installed on your server)
 ```
-ansible-galaxy install git+https://github.com/darexsu/ansible-role-ssh.git
+ansible-galaxy install git+https://github.com/darexsu/ansible-role-ssh.git --force
 ```
 2) Example playbook
 ```yaml

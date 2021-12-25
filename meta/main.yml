@@ -12,5 +12,12 @@ galaxy_info:
         - stretch
         - buster
         - bullseye
+    - name: Ubuntu
+      versions:
+        - trusty
+        - xenial
+        - focal
   galaxy_tags:
-    - server
+    - ssh
+    - system
+    - sshd
