@@ -5,9 +5,8 @@ Ansible dependencies: None
 
 Platforms: Debian, Ubuntu, RHEL, CentOS, Rocky, Oracle
 
-Options:
-  - Install openssh-server
-  - Creat your ssh-keys and add public key to remote host
+Options:  
+  - Creat ssh-keys and add public key to remote host
   - Disable sudo password for ansible_user on remote host
 
 Installation:
@@ -23,8 +22,7 @@ ansible-galaxy install darexsu.ssh --force
 
   roles:
     - role: darexsu.ssh
-      vars:
-        ssh_install: true
+      vars:        
         ssh_actions: true
         ssh_actions_add_public_key_to_host: true
         ssh_actions_no_sudo_password_for_ansible_user: true

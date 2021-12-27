@@ -1,6 +1,0 @@
-- name: install ssh packages
-  ansible.builtin.package:
-    name: "{{ item }}"
-    state: present
-  ignore_errors: yes
-  with_items: "{{ ssh_install_list }}"
