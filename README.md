@@ -3,7 +3,7 @@
 
 Ansible dependencies: None
 
-Platforms: Debian, Ubuntu, CentOS, RockyLinux, OracleLinux
+Platforms: Debian, Ubuntu, Ente
 
 Options:
   - Install openssh-server
