@@ -8,15 +8,20 @@ defaults:
   run:
     working-directory: 'darexsu.ssh'
 
-jobs: 
+jobs:
   molecule:
     name: Molecule
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        distro: [ debian10, debian11, ubuntu1804, ubuntu2004, centos7, centos8, rockylinux8 ]
-       
-
+        distro:
+          - debian10
+          - debian11
+          - ubuntu1804
+          - ubuntu2004
+          - centos7
+          - centos8
+          - rockylinux8
     steps:
       - name: Check out the codebase.
         uses: actions/checkout@v2

@@ -1,3 +1,4 @@
+---
 - name: include ssh_actions_add_public_key_to_host
   include_tasks: ./tasks/actions/ssh_actions_add_public_key_to_host.yml
   when: ssh_actions_add_public_key_to_host

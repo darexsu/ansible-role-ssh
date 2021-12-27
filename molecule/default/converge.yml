@@ -10,7 +10,7 @@
 
   roles:
     - role: darexsu.ssh
-      vars:       
+      vars:
         ssh_actions: true
         ssh_actions_add_public_key_to_host: true
         ssh_actions_no_sudo_password_for_ansible_user: true

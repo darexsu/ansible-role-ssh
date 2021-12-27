@@ -1,4 +1,5 @@
-#-----------Actions-------------#
+---
+# -----------Actions------------- #
 ssh_actions: false
 ssh_actions_add_public_key_to_host: false
 ssh_actions_no_password_for_sudo: false

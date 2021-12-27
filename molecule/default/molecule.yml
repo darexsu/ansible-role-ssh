@@ -20,18 +20,22 @@ scenario:
     - dependency
     - syntax
     - create
-    #- prepare
+    # - prepare
     - converge
     - idempotence
     - side_effect
     - verify
     - destroy
 
+lint: |
+  yamllint .
+
+
 provisioner:
   name: ansible
   playbooks:
     converge: ${MOLECULE_PLAYBOOK:-converge.yml}
   inventory:
-    host_vars:     
+    host_vars:
       instance:
         ansible_user: root
