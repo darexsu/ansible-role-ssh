@@ -9,7 +9,7 @@ Options:
   - Disable sudo password for ansible_user on remote host
 
 Installation:
-1) Install from Github (git installed on your server)
+1) Install from Galaxy
 ```
 ansible-galaxy install darexsu.ssh --force
 ```
