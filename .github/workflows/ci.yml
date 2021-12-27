@@ -1,5 +1,5 @@
 ---
-name: CI
+name: "CI molecule"
 'on':
   pull_request:
   push:
@@ -18,12 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        distro:
-          - centos8
-          - rockylinux8
-          - ubuntu2004
-          - ubuntu1804
-          - debian10
+        distro: [ debian10, debian11, ubuntu1804, ubuntu2004, centos7, centos8, rockylinux8 ]
+       
 
     steps:
       - name: Check out the codebase.
