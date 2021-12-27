@@ -20,7 +20,7 @@ ansible-galaxy install git+https://github.com/darexsu/ansible-role-ssh.git --for
   become: yes
 
   roles:
-    - role: ansible-role-ssh
+    - role: darexsu.ssh
       vars:
         ssh_install: true
         ssh_actions: true
