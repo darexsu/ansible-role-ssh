@@ -2,8 +2,8 @@
   include_tasks: ./tasks/actions/ssh_actions_add_public_key_to_host.yml
   when: ssh_actions_add_public_key_to_host
 
-- name: include ssh_actions_no_sudo_password_for_ansible_user
-  include_tasks: ./tasks/actions/ssh_actions_no_sudo_password_for_ansible_user.yml
+- name: include ssh_actions_no_password_for_sudo
+  include_tasks: ./tasks/actions/ssh_actions_no_password_for_sudo.yml
   when:
-    - ssh_actions_no_sudo_password_for_ansible_user
+    - ssh_actions_no_password_for_sudo
     - ansible_user != "root"

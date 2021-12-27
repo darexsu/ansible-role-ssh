@@ -1,5 +1,5 @@
 - name: include ssh install
-  include_tasks: ./tasks/install/ssh_install_{{ ansible_distribution | lower }}.yml
+  include_tasks: ./tasks/install/ssh_install_{{ ansible_os_family | lower }}.yml
   when: ssh_install
 
 - name: include ssh actions

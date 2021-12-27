@@ -1,14 +1,12 @@
 # Ansible role SSH
+Ansible dependencies: None
+
+Platforms: Debian, RedHat
+
 Options:
   - Install openssh-server
   - Creat your ssh-keys and add public key to remote host
   - Disable sudo password for ansible_user on remote host
-
-Platforms:
-  - Debian, Ubuntu
-
-Ansible dependencies:
-  - None
 
 Installation:
 1) Install from Github (git installed on your server)

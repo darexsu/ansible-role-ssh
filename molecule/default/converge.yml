@@ -1,0 +1,17 @@
+---
+- name: Converge
+  hosts: all
+
+  pre_tasks:
+    - name: Update apt cache.
+      apt: update_cache=yes cache_valid_time=600
+      when: ansible_os_family == 'Debian'
+      changed_when: false
+
+  roles:
+    - role: ansible-role-ssh
+      vars:
+        ssh_install: true
+        ssh_actions: true
+        ssh_actions_add_public_key_to_host: true
+        ssh_actions_no_sudo_password_for_ansible_user: true
