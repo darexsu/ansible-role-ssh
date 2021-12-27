@@ -1,7 +1,8 @@
 # Ansible role SSH
+[![CI molecule](https://github.com/darexsu/ansible-role-ssh/actions/workflows/ci.yml/badge.svg)](https://github.com/darexsu/ansible-role-ssh/actions/workflows/ci.yml)
 Ansible dependencies: None
 
-Platforms: Debian, RedHat
+Platforms: Debian, Ubuntu, CentOS, RockyLinux, OracleLinux
 
 Options:
   - Install openssh-server
