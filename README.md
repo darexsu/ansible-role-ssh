@@ -6,7 +6,7 @@ Ansible dependencies: None
 Platforms: Debian, Ubuntu, RHEL, CentOS, Rocky, Oracle
 
 Options:  
-  - Creat ssh-keys and add public key to remote host
+  - Create ssh-keys and add public key to remote host
   - Disable sudo password for ansible_user on remote host
 
 Installation:
